@@ -436,6 +436,9 @@ width: 80%;
   font-family: Arial, sans-serif;
   margin: 0px 0px 50px 30px;
 }
+#projects span{
+  color: #45dac0;
+}
 
 .projects-section {
   display: flex;
