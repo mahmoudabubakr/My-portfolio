@@ -1,11 +1,15 @@
-// script.js
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');
 }
 
 
-// ////////////////
+function rotateLines() {
+  const container = document.querySelector('.lines-container');
+  container.classList.toggle('rotated'); // تبديل الكلاس بين الوضع العادي والمقلوب
+}
+
+//////////////////
 const canvas = document.getElementById("spiderweb");
 const ctx = canvas.getContext("2d");
 
