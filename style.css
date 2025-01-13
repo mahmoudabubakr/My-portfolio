@@ -169,7 +169,7 @@ a:hover {
   }
 
   .rotated .line-2 {
-    transform: rotate(-45deg) translateY(-9px);
+    transform: rotate(-45deg) translateY(-8px);
   }
 }
 
@@ -246,7 +246,7 @@ header p {
   header {
     display: flex;
     align-items: center;
-    margin-bottom: 0px;
+    height: 30vh;
   }
 
   h1 {
@@ -262,7 +262,11 @@ header p {
   }
 
 }
-
+@media (max-width:500px) {
+  header {
+    height: 50vh;
+  }
+}
 /* end header */
 
 
