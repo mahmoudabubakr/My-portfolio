@@ -142,7 +142,7 @@ a:hover {
     .lines-container {
     position: relative;
     width: 30px;
-    height: 20px;
+    height: 15px;
     cursor: pointer;
   }
 
@@ -165,11 +165,11 @@ a:hover {
   }
 
   .rotated .line-1 {
-    transform: rotate(45deg) translateY(11px);
+    transform: rotate(45deg) translateY(7px);
   }
 
   .rotated .line-2 {
-    transform: rotate(-45deg) translateY(-11px);
+    transform: rotate(-45deg) translateY(-9px);
   }
 }
 
