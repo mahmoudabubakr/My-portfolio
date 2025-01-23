@@ -385,9 +385,6 @@ header p {
   font-family: Arial, sans-serif;
   margin: 0px 0px 50px 30px;
 }
-#projects span{
-  color: #45dac0;
-}
 
 .projects-section {
   display: flex;
@@ -431,16 +428,39 @@ header p {
 .project-title {
   padding: 10px 25px 10px 25px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 18px;
   font-weight: bold;
   background-color: #ffffff;
-  color: black;
 }
-.project-card a{
-  text-decoration: none;
-}
+  .project-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .preview-link {
+    text-decoration: none;
+      color: black;
+    font-size:"20px"
+    transition: all 0.3s ease;
+  }
+  
+  .preview-link:hover {
+    color: #45dac0;
+  }
+  
+  .git-link {
+    text-decoration: none;
+    color: black;
+      font-size:"20px"
+    transition: all 0.3s ease;
+  }
+  
+  .git-link:hover {
+      color: #45dac0;
+  }
 
 @media (max-width:910px) {
   .projects-section {
