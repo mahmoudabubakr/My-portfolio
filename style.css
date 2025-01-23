@@ -613,16 +613,10 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-.up :hover {
-  transform: translateY(-5px);
-
-}
-
 .up a {
   color: #45dac0;
   transition: transform 0.3s ease, color 0.5s ease;
 }
-
 .up a:hover {
   color: #45dac1a8;
 }
