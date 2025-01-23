@@ -263,11 +263,11 @@ header p {
   }
 
 }
-@media (max-width:500px) {
+/* @media (max-width:50px) {
   header {
     height: 50vh;
   }
-}
+} */
 /* end header */
 
 
