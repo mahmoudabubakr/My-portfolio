@@ -442,8 +442,8 @@ header p {
   .project-links a{
         text-decoration: none;
       color: black;
-    font-size:"25px"
-  transition: transform 0.3s ease, ;
+    font-size:"25px";
+  transition: color 0.3s;
   }
   .project-link a:hover {
     color: #45dac0;
