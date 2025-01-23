@@ -66,6 +66,7 @@ ul a {
   border-radius: 20px;
   font-size: 15px;
   margin: 0px 20px;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
@@ -95,7 +96,7 @@ a:hover {
 .social_nav i {
   font-size: 25px;
   color: #ffffff;
-  transition: transform 0.3s ease, ;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
