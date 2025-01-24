@@ -99,19 +99,4 @@ window.addEventListener("resize", () => {
 // بدء الشبكة العائمة
 createRandomPoints(30); // إنشاء 20 نقطة عشوائية
 animate();
-// /////////////////////////////
 
-// function sendEmail() {
-//   Email.send({
-//     SecureToken : "68fd02a3-73f0-479b-98e9-24dbd1da59a5",
-//     To : 'mahmoudabo1611@gmail.com',
-//     From : "mahmoudabo1611@gmail.com",
-//     Subject : "test email",
-//     Body : "name: " + document.getElementById("name").value 
-//         + "‹br> Email: " + document-getElementById("email").value
-//         + "‹br› phone no: " + document-getElementById ("phone").value
-//         + "‹br› message: " + document-getElementById ("message") .value
-//   }). then(
-//   message => alert ("message sent succesfully ")
-//   );
-// }
