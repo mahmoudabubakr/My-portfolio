@@ -183,6 +183,10 @@ a:hover {
   .social_nav {
     display: none;
   }
+   svg{
+     width:40px ;
+     height:40px ;
+        }
 .logo-name h2{
 font-size: 1.3rem;
 }
@@ -193,6 +197,10 @@ font-size: 1.3rem;
     justify-content: space-between;
     padding: 15px 5px 0px 5px;
 }
+     svg{
+     width:40px ;
+     height:40px ;
+        }
   .logo-name h2{
 font-size: 1.1rem;
 }
