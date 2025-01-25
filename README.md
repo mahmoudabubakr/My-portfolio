@@ -49,7 +49,7 @@ To explore my portfolio:
 
 ## Contact  
 If you’re interested in collaborating or have any questions, feel free to reach out:  
-- **Email:** mahmoudabubakr@outlook.com  
+- **Email:** mahmoudabubakr11@outlook.com  
 - **LinkedIn:** https://www.linkedin.com/in/mahmoud-ali-abubakr/  
 - **GitHub:** https://github.com/mahmoudabubakr?tab=repositories
 - **WhatsApp:** https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0
