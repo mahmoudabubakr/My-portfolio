@@ -30,7 +30,8 @@ To explore my portfolio:
 ## Technologies Used  
 - **HTML5**  
 - **CSS3**  
-- **JavaScript**  
+- **JavaScript**
+- **Responsive Web Design** 
 
 ---
 ## Screenshots 
