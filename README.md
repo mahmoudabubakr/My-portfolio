@@ -16,7 +16,7 @@ This portfolio showcases my previous work and projects in web development. The w
 - High performance and fast loading speed.  
 - Simple and user-friendly interface.  
 - Elegant project presentation.  
-- "Contact Me" page for quick communication.  
+- Contact Me" page for quick communication.  
 
 ---
 
@@ -31,7 +31,6 @@ To explore my portfolio:
 - **HTML5**  
 - **CSS3**  
 - **JavaScript**
-- **Responsive Web Design** 
 
 ---
 ## Screenshots 
