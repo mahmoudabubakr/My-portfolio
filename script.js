@@ -10,7 +10,7 @@ function rotateLines() {
 }
 ///////////////////
 const textElement = document.getElementById("animated-text");
-const texts = ["Frontend Developer", "Web Designer"];
+const texts = ["Frontend Developer.", "Web Designer."];
 let currentTextIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
