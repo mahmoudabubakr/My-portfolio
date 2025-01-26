@@ -34,8 +34,7 @@ To explore my portfolio:
 - **Responsive Websits**
 
 ---
-## Screenshots 
-### Screenshot of the Portfolio  
+## Screenshots of the Portfolio  
 ![Image](https://github.com/user-attachments/assets/65740043-22d4-44c9-84cf-321e0b17e11d)
 
 ![Image](https://github.com/user-attachments/assets/d8b58d33-ba46-49e9-9ddc-cd8479dd7974)
