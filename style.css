@@ -82,7 +82,7 @@ ul a {
 nav ul a:hover::after {
   transform: scaleX(1);
 
-}س
+}
 a:hover {
   color: #ffffffff;
 }
