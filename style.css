@@ -66,25 +66,6 @@ ul a {
   transition: color 0.3s;
   cursor: pointer;
 }
-
-.navigation ul a::after {
-  content: '';
-  position: absolute;
-  top: 18px;
-  left: 0px;
-  width: 100%;
-  height: 2px;
-  background-color: #45dac0;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transition: transform .5s;
-}
-
-nav ul a:hover::after {
-  transform: scaleX(1);
-
-}
-
 a:hover {
   color: #ffffffff;
 }
