@@ -282,7 +282,7 @@ header p {
 }
 
 .Btn:hover {
-  background-color: #45dac16f;
+  background-color: #45dac12d;
   transition-duration: .3s;
   transform: translateY(-5px);
 }
