@@ -206,7 +206,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   margin: 0px 30px;
-  height: 55vh;
+  height: 55dvh;
 }
 
 h1 {
@@ -322,7 +322,7 @@ header p {
   header {
     display: flex;
     align-items: center;
-    height: 30vh;
+    height: 30dvh;
   }
 
   h1 {
@@ -340,7 +340,7 @@ header p {
 }
 @media (max-width:550px) {
   header {
-    height: 50vh;
+    height: 56dvh;
   }
   .Btn {
   width: 13rem;
