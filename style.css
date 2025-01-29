@@ -221,7 +221,7 @@ header p {
   letter-spacing: 1px;
 }
 
-.cv-button {
+/* .cv-button {
   text-decoration: none;
   display: inline-block;
   padding: 10px 30px;
@@ -241,6 +241,74 @@ header p {
   color: #45dac1;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ */
+.Btn {
+  width: 13rem;
+  padding: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  color: #45dac1;
+  background-color: #45dac100;
+  border: #45dac0 1px solid;
+  border-radius: 5px;
+  background-color: rgba(27, 27, 27, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  position: relative;
+  transition-duration: .3s;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.svgIcon {
+  fill: rgb(255, 255, 255);
+}
+
+.icon2 {
+  width: 18px;
+  height: 5px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+.Btn:hover {
+  background-color: #45dac16f;
+  transition-duration: .3s;
+  transform: translateY(-5px);
+}
+
+.Btn:hover .icon2 {
+  border-bottom: 2px solid rgb(235, 235, 235);
+  border-left: 2px solid rgb(235, 235, 235);
+  border-right: 2px solid rgb(235, 235, 235);
+}
+
+.Btn:hover .svgIcon {
+  fill: rgb(255, 255, 255);
+  animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.mmm {
+  display: flex;
+  flex-direction: column;
 }
 
 /*  */
