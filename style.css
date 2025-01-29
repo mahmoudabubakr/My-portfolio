@@ -248,7 +248,7 @@ header p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 } */
 .Btn {
-  width: 13rem;
+  width: 14rem;
   padding: 10px;
   font-size: 19px;
   font-weight: bold;
@@ -341,6 +341,9 @@ header p {
 @media (max-width:550px) {
   header {
     height: 50vh;
+  }
+  .Btn {
+  width: 13rem;
   }
 }
 /* end header */
