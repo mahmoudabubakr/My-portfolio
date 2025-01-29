@@ -221,7 +221,7 @@ header p {
   letter-spacing: 1px;
 }
 
-/* .cv-button {
+.cv-button {
   text-decoration: none;
   display: inline-block;
   padding: 10px 30px;
@@ -241,74 +241,6 @@ header p {
   color: #45dac1;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
-
-.Btn {
-  width: 13rem;
-  padding: 10px;
-  font-size: 19px;
-  font-weight: bold;
-  color: #45dac1;
-  background-color: #45dac100;
-  border: #45dac0 1px solid;
-  border-radius: 5px;
-  background-color: rgba(27, 27, 27, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  cursor: pointer;
-  position: relative;
-  transition-duration: .3s;
-  transition: all 0.3s ease;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-.svgIcon {
-  fill: rgb(255, 255, 255);
-}
-
-.icon2 {
-  width: 18px;
-  height: 5px;
-  border-bottom: 2px solid rgb(255, 255, 255);
-  border-left: 2px solid rgb(255, 255, 255);
-  border-right: 2px solid rgb(255, 255, 255);
-}
-
-.Btn:hover {
-  background-color: #45dac16f;
-  transition-duration: .3s;
-  transform: translateY(-5px);
-}
-
-.Btn:hover .icon2 {
-  border-bottom: 2px solid rgb(235, 235, 235);
-  border-left: 2px solid rgb(235, 235, 235);
-  border-right: 2px solid rgb(235, 235, 235);
-}
-
-.Btn:hover .svgIcon {
-  fill: rgb(255, 255, 255);
-  animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-.mmm {
-  display: flex;
-  flex-direction: column;
 }
 
 /*  */
@@ -327,9 +259,9 @@ header p {
     font-size: 1rem;
   }
 
-/*   .cv-button {
+  .cv-button {
     margin: auto;
-  } */
+  }
 
 }
 @media (max-width:550px) {
@@ -609,7 +541,7 @@ textarea {
 }
 
 /*  */
-/* button {
+button {
   text-decoration: none;
   display: inline-block;
   padding: 10px 20px;
@@ -629,63 +561,6 @@ button:hover {
   color: #45dac1;
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
-button {
-  font-family: inherit;
-  font-size: 20px;
-  background-color: #45dac100;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  border: #45dac0 1px solid;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45dac12d;
-  color: #ffffff;
-}
-
-button span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-button svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-button:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-button:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-button:hover span {
-  transform: translateX(5em);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
-  }
-
-  to {
-    transform: translateY(-0.1em);
-  }
 }
 
 /*  */
