@@ -35,15 +35,15 @@ To explore my portfolio:
 
 ---
 ## Screenshots  
-![Image](https://github.com/user-attachments/assets/65740043-22d4-44c9-84cf-321e0b17e11d)
+![Image](https://github.com/user-attachments/assets/e30f2d82-93a1-4db0-b369-033ec0ac1f07)
 
 ![Image](https://github.com/user-attachments/assets/d8b58d33-ba46-49e9-9ddc-cd8479dd7974)
 
-![Image](https://github.com/user-attachments/assets/070f9ede-72b5-40e8-95bf-81e8d873c688)
+![Image](https://github.com/user-attachments/assets/6c4845ec-14a7-4c88-a39b-0ef1de230881)
 
 ![Image](https://github.com/user-attachments/assets/8708d99e-ed48-4588-a529-5b8d24d22fee)
 
-![Image](https://github.com/user-attachments/assets/4a00bc82-33b4-4f2e-adfe-daeaa96fc5f3)
+![Image](https://github.com/user-attachments/assets/16364871-f95c-4d5f-bf47-c2e35f2871b9)
 
 ---
 
