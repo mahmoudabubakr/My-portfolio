@@ -451,6 +451,10 @@ header p {
   #skills h2 {
     text-align: center;
   }
+    .skill h3 {
+    width: 100%;
+  text-align: left;
+  }
 }
 /*  */
 
