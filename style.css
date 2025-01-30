@@ -455,6 +455,9 @@ header p {
     width: 100%;
   text-align: left;
   }
+    .skill {
+  gap: 30px;
+  }
 }
 /*  */
 
