@@ -91,7 +91,7 @@ a:hover {
 .social_nav i {
   font-size: 25px;
   color: #ffffff;
-  transition: color 0.3s;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -719,7 +719,7 @@ button:active {
 .social-icons a {
   color: #ffffff;
   font-size: 20px;
-  transition: color 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .social-icons a:hover {
