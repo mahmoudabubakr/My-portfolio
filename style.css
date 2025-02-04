@@ -462,6 +462,86 @@ header p {
 /*  */
 
 /*  */
+#Services h2{
+  margin-left: 30px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 2rem;
+}
+.service-img{
+  display: flex;
+  justify-content: center;
+}
+.cards{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.card{
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  width:25%;
+}
+.card:after{
+  content: "";
+  position: absolute;
+  top: 150%;
+  left: -200px;
+  transform: rotate(50deg);
+  background-color: white;
+  height: 18px;
+  filter: blur(30px);
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.card:hover:after{
+  width: 255%;
+  top:-100%;
+}
+.card h3{
+  font-size: 1.5rem;
+  color: white;
+  margin: 30px 0 20px 0;
+  text-align: center;
+}
+.card p{
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.671);
+  margin: 10px 0 30px 0;
+  line-height: 20px;
+}
+.card i{
+  font-size: 25px;
+  color: white;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+
+}
+.card:hover i{ 
+  color: #45dac0;
+  transform: rotate(90deg);
+}
+
+@media (max-width:800px) {
+.cards{
+flex-direction: column;
+gap: 30px;
+}
+.card{
+  width: 80%;
+}
+}
+
+/*  */
+
+/*  */
 #projects {
   margin: 100px 0px 70px 0px;
 }
