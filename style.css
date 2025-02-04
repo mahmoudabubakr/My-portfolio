@@ -493,6 +493,9 @@ header p {
   width:25%;
   border-radius: 10px;
 }
+.card:hover{
+  transform: scale(1.05);
+}
 .card:after{
   content: "";
   position: absolute;
