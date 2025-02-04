@@ -468,6 +468,9 @@ header p {
   color: white;
   font-size: 2rem;
 }
+#Services span{
+  color: #45dac0;
+}
 .service-img{
   display: flex;
   justify-content: center;
