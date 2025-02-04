@@ -485,6 +485,7 @@ header p {
   overflow: hidden;
   position: relative;
   width:25%;
+  border-radius: 10px;
 }
 .card:after{
   content: "";
