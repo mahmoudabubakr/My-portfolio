@@ -540,6 +540,10 @@ gap: 30px;
 }
   #Services h2{
     text-align: center;
+    font-size: 1.5rem;
+      margin-left: 0px;
+  margin-bottom: 30px;
+    
   }
 }
 
