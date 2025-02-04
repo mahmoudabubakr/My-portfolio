@@ -538,6 +538,9 @@ gap: 30px;
 .card{
   width: 80%;
 }
+  #Services h2{
+    text-align: center;
+  }
 }
 
 /*  */
