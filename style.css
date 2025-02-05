@@ -385,6 +385,7 @@ header p {
 @media (max-width:750px) {
   #about {
     text-align: center;
+     margin: 100px 0px;
   }
 
   .learn h2 {
@@ -444,7 +445,7 @@ header p {
 
 @media (max-width:750px) {
   #skills {
-    margin: 50px 0px 50px 20px;
+    margin: 50px 0px 50px 0px;
     text-align: center;
   }
 
