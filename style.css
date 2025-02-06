@@ -399,6 +399,7 @@ header p {
   }
 
   .about-contant {
+    margin:0 20px 0 20px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -423,7 +424,8 @@ header p {
 #skills span {
   color: #45dac0;
 }
-
+.contant-skills{
+  margin-left:0 0 0 20px;
 .skill {
   display: flex;
   align-items: center;
