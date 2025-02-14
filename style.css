@@ -65,6 +65,7 @@ ul a {
   margin: 0px 20px;
   transition: color 0.3s;
   cursor: pointer;
+  font-weight: bold;
 }
 .navigation ul a::after {
   content: '';
