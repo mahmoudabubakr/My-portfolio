@@ -451,6 +451,7 @@ header p {
   #skills {
     margin: 50px 0px 100px 0px;
     text-align: center;
+    justify-content: space-around;
   }
 
   #skills h2 {
@@ -458,6 +459,7 @@ header p {
   }
     .skill h3 {
     width: 100%;
+    margin-left: 15px;
   text-align: left;
   }
     .skill {
