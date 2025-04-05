@@ -13,6 +13,11 @@ body {
   background-color: #0a192f;
   margin : 0 50px;
 }
+@media (max-width: 900px) {
+body {
+  margin : 0px;
+}
+}
 
 /* الكانفاس كخلفية */
 #spiderweb {
