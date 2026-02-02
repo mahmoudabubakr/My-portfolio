@@ -417,6 +417,8 @@ header p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 50px 0 15px;
+  gap: 50px;
 }
 
 #about img {
@@ -426,6 +428,33 @@ header p {
 }
 
 /*  */
+
+@media (max-width:900px) {
+  #about {
+    text-align: center;
+    margin: 100px 0px;
+  }
+
+  .learn p {
+    width: auto;
+  }
+
+  .about-contant {
+    margin: 0 20px 0 20px;
+    /* display: flex;
+    flex-direction: column-reverse; */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+  }
+
+  #about img {
+    margin-top: 30px;
+    /* width: 70%; */
+  }
+}
+
+
 @media (max-width:750px) {
   #about {
     text-align: center;
@@ -950,3 +979,4 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
