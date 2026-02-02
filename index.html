@@ -14,7 +14,7 @@
 
 <body>
   <!-- start nav par -->
-  <nav id="home" >
+  <nav id="home">
     <div class="navigation">
       <div class="Logo-name">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 50 50"
@@ -33,24 +33,16 @@
         <li><a href="#projects">PROJECTS</a></li>
         <li><a href="#contact">CONTACT ME</a></li>
       </ul>
-      <div class="side-nav">
-        <div class="social_nav">
-          <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
-            target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="http://linkedin.com/in/mahmoudaliabubakr" target="_blank"><i
-              class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">
-          <div class="lines-container" onclick="rotateLines()">
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-          </div>
+      <div class="menu-overlay"></div>
+      <div class="hamburger">
+        <div class="lines-container">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
         </div>
       </div>
-     </div>
-    </nav>
+    </div>
+    </div>
+  </nav>
   <!-- end nav par -->
 
   <!-- start header -->
@@ -59,19 +51,30 @@
       <h1>Hi, I'm <span>Mahmoud Ali Abu-bakr</span> <br> I'm a <span id="animated-text"></span></h1>
       <p>Welcome to my portfolio, I did this website to show all my services and projects, I wish you like my portfolio.
       </p>
-<!--       <a href="https://drive.google.com/file/d/1-VpkL87hKnCZ0r4sffcKsxVjpTEu9ybd/view?usp=drive_link" class="cv-button"
+      <!--       <a href="https://drive.google.com/file/d/1-VpkL87hKnCZ0r4sffcKsxVjpTEu9ybd/view?usp=drive_link" class="cv-button"
         target="_blank">Download Resume</a> -->
-            <a href="https://drive.google.com/file/d/1aPdHLLWAEl8J3AAgklktbWP1qm7SlS-J/view?usp=sharing" target="_blank" class="Btn">
-                      <span >Download CV</span>
-        <div class="mmm">
-          <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
-            </path>
-          </svg>
-          <span class="icon2"></span>
+      <div class="head">
+        <a href="https://drive.google.com/file/d/1aPdHLLWAEl8J3AAgklktbWP1qm7SlS-J/view?usp=sharing" target="_blank"
+          class="Btn">
+          <span>Download CV</span>
+          <div class="mmm">
+            <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+              </path>
+            </svg>
+            <span class="icon2"></span>
+          </div>
+        </a>
+        <div class="social_nav">
+          <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
+            target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="http://linkedin.com/in/mahmoudaliabubakr" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
         </div>
-      </a>
+      </div>
     </div>
   </header>
   <!-- end header -->
@@ -107,7 +110,7 @@
         <span><i class="fa-brands fa-css3-alt fa-fade" style="color: #0f4095;"></i></span>
         <span><i class="fa-brands fa-square-js fa-fade" style="color: #FFD43B;"></i></span>
         <span><i class="fa-brands fa-node-js fa-fade" style="color: #03ad00;"></i></span>
-<!--         <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 35 35"
+        <!-- <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.5 -0.5 35 35"
             id="Typescript-Icon--Streamline-Svg-Logos" height="35" width="35">
             <desc>Typescript Icon Streamline Icon: https://streamlinehq.com</desc>
             <path fill="#3178C6"
@@ -133,7 +136,7 @@
       </div>
     </section>
     <!-- end sec skills -->
-        <!-- start services -->
+    <!-- start services -->
     <section id="Services">
       <h2>Services<span>.</span></h2>
       <div class="cards">
@@ -148,7 +151,7 @@
           </div>
           <h3>UI&UX Desing</h3>
           <p>ning intuitive and engaging interfaces for an enhanced user experience.</p>
-<!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
+          <!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
         </div>
         <div class="card">
           <div class="service-img">
@@ -161,7 +164,7 @@
           </div>
           <h3>Frontend By React</h3>
           <p>Utilizing frameworks like React.js for scalable web applications.</p>
-<!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
+          <!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
         </div>
         <div class="card">
           <div class="service-img">
@@ -174,7 +177,7 @@
           </div>
           <h3>Responsive Develop</h3>
           <p>Creating visually appealing and optimized websites for All devices</p>
-<!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
+          <!--           <i class="fa-solid fa-arrow-up fa-2xl"></i> -->
         </div>
       </div>
     </section>
@@ -193,8 +196,10 @@
               <span>Burger Restaurant</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/mahmoudabubakr/Burger-Restaurant" target="_blank"><i class="fa-brands fa-github"></i></a>
-              <a href="https://mahmoudabubakr.github.io/Burger-Restaurant/" target="_blank"><i class="fa-solid fa-link"></i></a>
+              <a href="https://github.com/mahmoudabubakr/Burger-Restaurant" target="_blank"><i
+                  class="fa-brands fa-github"></i></a>
+              <a href="https://mahmoudabubakr.github.io/Burger-Restaurant/" target="_blank"><i
+                  class="fa-solid fa-link"></i></a>
             </div>
           </div>
         </div>
@@ -207,7 +212,8 @@
               <span>Portfolio</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/mahmoudabubakr/My-portfolio" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/mahmoudabubakr/My-portfolio" target="_blank"><i
+                  class="fa-brands fa-github"></i></a>
               <a href="#" target="_blank"><i class="fa-solid fa-link"></i></a>
             </div>
           </div>
@@ -234,8 +240,8 @@
           </div>
           <div class="form">
             <!--  -->
-<!--             <button type="submit">Let's talk</button> -->
-                        <button>
+            <!--             <button type="submit">Let's talk</button> -->
+            <button>
               <div class="svg-wrapper-1">
                 <div class="svg-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1.5rem" height="1.3rem">
@@ -250,7 +256,8 @@
             </button>
             <!--  -->
             <div class="social-icons">
-              <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i class="fa-brands fa-github"></i>
+              <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i
+                  class="fa-brands fa-github"></i>
                 <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
                   target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="http://linkedin.com/in/mahmoudaliabubakr" target="_blank"><i
@@ -267,16 +274,16 @@
     <div class="up">
       <a href="#home"><i class="fa-solid fa-circle-chevron-up"></i></a>
     </div>
-    
+
   </main>
   <!-- end main -->
 
-      <!-- start footer -->
-    <footer>
-      <p>Developed by Mahmoud Abu-bakr @ 2025</p>
-    </footer>
-    <!-- end footer -->
-  
+  <!-- start footer -->
+  <footer>
+    <p>Developed by Mahmoud Abu-bakr @ 2025</p>
+  </footer>
+  <!-- end footer -->
+
   <!-- start canves background -->
   <canvas id="spiderweb"></canvas>
   <!-- end canves background -->
