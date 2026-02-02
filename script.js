@@ -1,16 +1,44 @@
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
+const menu = document.querySelector('.nav-links');
+const overlay = document.querySelector('.menu-overlay');
+const hamburger = document.querySelector('.hamburger');
+const lines = document.querySelector('.lines-container');
+
+/* عند الضغط على زر المنيو */
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  overlay.classList.toggle('active');
+  lines.classList.toggle('rotated'); // ☰ ⇄ X
+});
+
+/* قفل المينيو */
+function closeMenu() {
+  menu.classList.remove('active');
+  overlay.classList.remove('active');
+  lines.classList.remove('rotated'); // ✅ يرجع للوضع الطبيعي
 }
 
+/* عند الضغط على أي لينك */
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
 
-function rotateLines() {
-  const container = document.querySelector('.lines-container');
-  container.classList.toggle('rotated'); // تبديل الكلاس بين الوضع العادي والمقلوب
-}
+/* ESC */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
+});
+
+/* الضغط على الخلفية */
+overlay.addEventListener('click', closeMenu);
+
+
+/* الضغط على الخلفية */
+overlay.addEventListener('click', closeMenu);
+
 ///////////////////
 const textElement = document.getElementById("animated-text");
-const texts = ["Front-End Developer.", "Web Designer."];
+const texts = ["Front-End Developer.", "Back-End Developer."];
 let currentTextIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
