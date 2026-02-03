@@ -169,6 +169,23 @@ animate();
 
 
 //
+// Initialize EmailJS
+(function () {
+  emailjs.init("YOUR_PUBLIC_KEY"); // ضع public key الخاص بك هنا
+})();
+
+// Alert function
+function showAlert(message, type = "success") {
+  const alertBox = document.getElementById("form-alert");
+  alertBox.textContent = message;
+  alertBox.className = `form-alert show ${type}`;
+
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, 3000);
+}
+
+// Send Mail function
 function sendMail(e) {
   e.preventDefault(); // يمنع reload الصفحة
 
@@ -185,15 +202,15 @@ function sendMail(e) {
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(
       () => {
-        alert("Email Sent Successfully ✅");
+        showAlert("Message sent successfully 🚀", "success");
         document.getElementById("contact-form").reset();
-        // window.location.href = "thank-you.html"; // لو حابب redirect
       },
       (error) => {
         console.log(error);
-        alert("Failed to send email ❌");
+        showAlert("Something went wrong, try again ❌", "error");
       }
     );
 }
+
 
 
