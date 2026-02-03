@@ -175,16 +175,27 @@ function sendMail(e) {
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
 
+  // التحقق من الخانات المطلوبة
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    showAlert("Please fill all required fields ✋", "error");
+    return; // يمنع الإرسال
+  }
+
+  // تعطيل الزرار أثناء الإرسال
   sendBtn.disabled = true;
-  btnText.textContent = "Sending... ⏳"; // نغير النص فقط داخل span
+  btnText.textContent = "Sending... ⏳";
 
   const subjectInput = document.getElementById("subject").value;
 
   let params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
+    name: name,
+    email: email,
     subject: subjectInput || "No Subject",
-    message: document.getElementById("message").value,
+    message: message,
   };
 
   emailjs
@@ -197,16 +208,9 @@ function sendMail(e) {
       showAlert("Something went wrong ❌", "error");
     })
     .finally(() => {
-      // ترجع النص الأصلي + الفورم يفضى + الزرار يرجع فعال
+      // إعادة الزرار والنص الأصلي + تفضية الفورم
       document.getElementById("contact-form").reset();
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
 }
-
-
-
-
-
-
-
