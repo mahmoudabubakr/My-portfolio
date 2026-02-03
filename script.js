@@ -169,15 +169,30 @@ animate();
 
 
 //
-function sendMail() {
-  let parms = {
-    name: document.getElementById("name").Value,
-    email: document.getElementById("email").Value,
-    subject: document.getElementById("subject").Value,
-    message: document.getElementById("message").Value,
-  }
+function sendMail(e) {
+  e.preventDefault(); // يمنع reload الصفحة
 
-  emailjs.send("service_bivff26", "template_4qdgy3p", parms).then(alert("Email Sent!!"))
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs
+    .send("service_bivff26", "template_4qdgy3p", params)
+    .then(
+      () => {
+        alert("Email Sent Successfully ✅");
+        document.getElementById("contact-form").reset();
+        // window.location.href = "thank-you.html"; // لو حابب redirect
+      },
+      (error) => {
+        console.log(error);
+        alert("Failed to send email ❌");
+      }
+    );
 }
+
 
 
