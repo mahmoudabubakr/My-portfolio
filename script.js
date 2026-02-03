@@ -172,6 +172,8 @@ animate();
 function sendMail(e) {
   e.preventDefault(); // يمنع reload الصفحة
 
+  const subjectInput = document.getElementById("subject").value;
+
   let params = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
@@ -193,7 +195,5 @@ function sendMail(e) {
       }
     );
 }
-
-
 
 
