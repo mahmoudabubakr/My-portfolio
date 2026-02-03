@@ -167,3 +167,17 @@ window.addEventListener("resize", () => {
 createRandomPoints(30); // إنشاء 20 نقطة عشوائية
 animate();
 
+
+//
+function sendMail() {
+  let parms = {
+    name: document.getElementById("name").Value,
+    email: document.getElementById("email").Value,
+    subject: document.getElementById("subject").Value,
+    message: document.getElementById("message").Value,
+  }
+
+  emailjs.send("service_bivff26", "template_4qdgy3p", parms).then(alert("Email Sent!!"))
+}
+
+
