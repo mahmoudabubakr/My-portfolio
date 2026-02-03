@@ -773,6 +773,10 @@ header p {
 /*  */
 
 /*  */
+#contact {
+  margin-bottom: 50px;
+}
+
 .contact-me {
   padding: 20px 0 0 0px;
   max-width: 800px;
@@ -954,7 +958,7 @@ button:active {
 }
 
 /*  */
-.up {
+/* .up {
   margin: 0px 50px 30px 0px;
   text-align: right;
   font-size: 40px;
@@ -976,7 +980,7 @@ button:active {
     text-align: right;
     font-size: 40px;
   }
-}
+} */
 
 /*  */
 footer {
@@ -985,6 +989,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
