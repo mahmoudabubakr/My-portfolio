@@ -190,25 +190,24 @@ function sendMail(e) {
     message: document.getElementById("message").value,
   };
 
-  // استخدام catch للتأكد من التعامل مع أي خطأ
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
-    .then(
-      () => {
-        showAlert("Message sent successfully 🚀", "success");
-        document.getElementById("contact-form").reset();
-      }
-    )
+    .then(() => {
+      showAlert("Message sent successfully 🚀", "success");
+    })
     .catch((error) => {
       console.log(error);
       showAlert("Something went wrong ❌", "error");
     })
     .finally(() => {
-      // في كل الحالات (نجاح أو فشل) نرجع الزرار طبيعي
-      sendBtn.disabled = false;
+      // هذه الخطوة تضمن أن الفورم يفضى والزر يرجع للوضع الطبيعي
+      const form = document.getElementById("contact-form");
+      form.reset();           // تفضية الفورم
+      sendBtn.disabled = false; 
       sendBtn.textContent = "Send Message";
     });
 }
+
 
 
 
