@@ -172,9 +172,11 @@ animate();
 function sendMail(e) {
   e.preventDefault();
 
-  const sendBtn = document.querySelector("#contact-form button");
+  const sendBtn = document.getElementById("send-btn");
+  const btnText = sendBtn.querySelector(".btn-text");
+
   sendBtn.disabled = true;
-  sendBtn.textContent = "Sending... ⏳";
+  btnText.textContent = "Sending... ⏳"; // نغير النص فقط داخل span
 
   const subjectInput = document.getElementById("subject").value;
 
@@ -195,13 +197,13 @@ function sendMail(e) {
       showAlert("Something went wrong ❌", "error");
     })
     .finally(() => {
-      // هذه الخطوة تضمن أن الفورم يفضى والزر يرجع للوضع الطبيعي
-      const form = document.getElementById("contact-form");
-      form.reset();           // تفضية الفورم
-      sendBtn.disabled = false; 
-      sendBtn.textContent = "Send Message";
+      // ترجع النص الأصلي + الفورم يفضى + الزرار يرجع فعال
+      document.getElementById("contact-form").reset();
+      sendBtn.disabled = false;
+      btnText.textContent = "Send";
     });
 }
+
 
 
 
