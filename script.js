@@ -1,8 +1,3 @@
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0); // scroll مباشر لفوق
-});
-
-
 const menu = document.querySelector('.nav-links');
 const overlay = document.querySelector('.menu-overlay');
 const hamburger = document.querySelector('.hamburger');
@@ -207,6 +202,7 @@ function sendMail(e) {
       sendBtn.textContent = "Send Message";
     });
 }
+
 
 
 
