@@ -1,3 +1,9 @@
+// ⬆️ اجعل الصفحة تبدأ من فوق عند التحميل
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0); // تبدأ الصفحة من فوق
+});
+
+/* ======= Menu Toggle ======= */
 const menu = document.querySelector('.nav-links');
 const overlay = document.querySelector('.menu-overlay');
 const hamburger = document.querySelector('.hamburger');
@@ -32,11 +38,7 @@ document.addEventListener('keydown', (e) => {
 /* الضغط على الخلفية */
 overlay.addEventListener('click', closeMenu);
 
-
-/* الضغط على الخلفية */
-overlay.addEventListener('click', closeMenu);
-
-///////////////////
+/* ======= Type Effect ======= */
 const textElement = document.getElementById("animated-text");
 const texts = ["Front-End Developer.", "Back-End Developer."];
 let currentTextIndex = 0;
@@ -47,72 +49,61 @@ const typeEffect = () => {
   const currentText = texts[currentTextIndex];
 
   if (!isDeleting) {
-    // كتابة النص حرفًا حرفًا
     textElement.textContent = currentText.slice(0, currentCharIndex + 1);
     currentCharIndex++;
 
-    // عند الانتهاء من كتابة النص بالكامل
     if (currentCharIndex === currentText.length) {
-      isDeleting = true; // بدء الحذف
-      setTimeout(typeEffect, 1000); // انتظار قبل بدء الحذف
+      isDeleting = true;
+      setTimeout(typeEffect, 1000);
       return;
     }
   } else {
-    // حذف النص حرفًا حرفًا
     textElement.textContent = currentText.slice(0, currentCharIndex - 1);
     currentCharIndex--;
 
-    // عند الانتهاء من حذف النص بالكامل
     if (currentCharIndex === 0) {
-      isDeleting = false; // بدء كتابة النص التالي
-      currentTextIndex = (currentTextIndex + 1) % texts.length; // الانتقال إلى النص التالي
+      isDeleting = false;
+      currentTextIndex = (currentTextIndex + 1) % texts.length;
     }
   }
 
-  // تحديد سرعة الكتابة والحذف
   setTimeout(typeEffect, isDeleting ? 100 : 150);
 };
 
-// بدء تأثير الكتابة
 typeEffect();
 
-////////////////////////
+/* ======= Spiderweb Canvas ======= */
 const canvas = document.getElementById("spiderweb");
 const ctx = canvas.getContext("2d");
 
-// ضبط حجم الكانفاس
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// مصفوفة لتخزين النقاط
 let points = [];
 
-// إنشاء نقاط عشوائية تتحرك
 function createRandomPoints(count) {
   for (let i = 0; i < count; i++) {
     points.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 2, // سرعة أفقية
-      vy: (Math.random() - 0.5) * 2, // سرعة عمودية
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
     });
   }
 }
 
-// رسم الشبكة
 function drawWeb() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // تنظيف الكانفاس
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // رسم الخطوط بين النقاط
   for (let i = 0; i < points.length; i++) {
     for (let j = i + 1; j < points.length; j++) {
       const distance = getDistance(points[i], points[j]);
 
-      if (distance < 150) { // شرط إذا كانت المسافة أقل من 150
+      if (distance < 150) {
         ctx.beginPath();
         ctx.moveTo(points[i].x, points[i].y);
         ctx.lineTo(points[j].x, points[j].y);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 150})`; // شفافية الخطوط
+        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 150})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -120,57 +111,60 @@ function drawWeb() {
   }
 }
 
-// تحديث موقع النقاط المتحركة
 function updatePoints() {
   for (let point of points) {
     point.x += point.vx;
     point.y += point.vy;
 
-    // عكس الاتجاه إذا خرجت النقطة خارج الحدود
     if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
     if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
   }
 }
 
-// حدث لإضافة نقطة عند النقر على الشاشة
 canvas.addEventListener("click", (e) => {
   points.push({
     x: e.clientX,
     y: e.clientY,
-    vx: (Math.random() - 0.5) * 2, // سرعة أفقية
-    vy: (Math.random() - 0.5) * 2, // سرعة عمودية
+    vx: (Math.random() - 0.5) * 2,
+    vy: (Math.random() - 0.5) * 2,
   });
 });
 
-// حساب المسافة بين نقطتين
 function getDistance(point1, point2) {
   const dx = point1.x - point2.x;
   const dy = point1.y - point2.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-// حلقة الرسوم المتحركة
 function animate() {
   drawWeb();
   updatePoints();
   requestAnimationFrame(animate);
 }
 
-// ضبط حجم الكانفاس عند تغيير حجم النافذة
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   drawWeb();
 });
 
-// بدء الشبكة العائمة
-createRandomPoints(30); // إنشاء 20 نقطة عشوائية
+createRandomPoints(30);
 animate();
 
+/* ======= Alert Function ======= */
+function showAlert(message, type = "success") {
+  const alertBox = document.getElementById("form-alert");
+  alertBox.textContent = message;
+  alertBox.className = `form-alert show ${type}`;
 
-//
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, 3000);
+}
+
+/* ======= EmailJS Send Mail ======= */
 function sendMail(e) {
-  e.preventDefault(); // يمنع reload الصفحة
+  e.preventDefault();
 
   const subjectInput = document.getElementById("subject").value;
 
@@ -185,17 +179,15 @@ function sendMail(e) {
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(
       () => {
-        alert("Email Sent Successfully ✅");
+        showAlert("Message sent successfully ✅", "success");
         document.getElementById("contact-form").reset();
-        // window.location.href = "thank-you.html"; // لو حابب redirect
       },
       (error) => {
         console.log(error);
-        alert("Failed to send email ❌");
+        showAlert("Something went wrong ❌", "error");
       }
     );
 }
-
 
 
 
