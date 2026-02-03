@@ -175,7 +175,11 @@ animate();
 
 //
 function sendMail(e) {
-  e.preventDefault(); // يمنع reload الصفحة
+  e.preventDefault();
+
+  const sendBtn = document.querySelector("#contact-form button"); // زرار الإرسال
+  sendBtn.disabled = true; // نوقفه أثناء الإرسال
+  sendBtn.textContent = "Sending... ⏳"; // تغيير النص للانتظار
 
   const subjectInput = document.getElementById("subject").value;
 
@@ -190,15 +194,19 @@ function sendMail(e) {
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(
       () => {
-        alert("Email Sent Successfully ✅");
+        showAlert("Message sent successfully ✅", "success");
         document.getElementById("contact-form").reset();
-        // window.location.href = "thank-you.html"; // لو حابب redirect
+        sendBtn.disabled = false; // يرجع يشتغل
+        sendBtn.textContent = "Send Message"; // يرجع النص الأصلي
       },
       (error) => {
         console.log(error);
-        alert("Failed to send email ❌");
+        showAlert("Something went wrong ❌", "error");
+        sendBtn.disabled = false; // يرجع يشتغل حتى لو حصل خطأ
+        sendBtn.textContent = "Send Message"; // يرجع النص الأصلي
       }
     );
 }
+
 
 
