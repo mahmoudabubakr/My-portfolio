@@ -175,7 +175,7 @@ function sendMail(e) {
   let params = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
+    subject: subjectInput || "No Subject",
     message: document.getElementById("message").value,
   };
 
@@ -193,6 +193,7 @@ function sendMail(e) {
       }
     );
 }
+
 
 
 
