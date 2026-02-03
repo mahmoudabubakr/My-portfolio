@@ -985,6 +985,40 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+//
+
+
+/* Alert Box */
+.form-alert {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.form-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-alert.success {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.form-alert.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+
 
 
 
