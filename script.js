@@ -186,7 +186,7 @@ function sendMail(e) {
   }
 
   sendBtn.disabled = true;
-  btnText.textContent = "Sending... ⏳";
+  btnText.textContent = "Sending...";
 
   const subjectInput = document.getElementById("subject").value;
 
@@ -200,7 +200,7 @@ function sendMail(e) {
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      alert("Message sent successfully 🚀"); // Alert افتراضي
+      alert("Thank you for your enquiry, I will get back to you shortly"); // Alert افتراضي
     })
     .catch((error) => {
       console.log(error);
@@ -212,4 +212,5 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
 
