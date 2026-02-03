@@ -10,7 +10,15 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <title>Mahmoud Abubakr portfolio</title>
-  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "vrgUEapjJFZwDATsM",
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -230,19 +238,19 @@
           just want to say hi, I’ll definitely get back to you!</p>
         <form action="https://forminit.com/thank-you" method="post" class="contact-form">
           <div class="form">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" id="name" name="name" placeholder="Name" required />
+            <input type="email" id="email" name="email" placeholder="Email" required />
           </div>
           <div class="form">
-            <input type="text" name="subject" placeholder="Subject" required />
+            <input type="text" id="subject" name="subject" placeholder="Subject" required />
           </div>
           <div class="form">
-            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
           </div>
           <div class="form">
             <!--  -->
             <!--             <button type="submit">Let's talk</button> -->
-            <button>
+            <button onclick="sendMail()">
               <div class="svg-wrapper-1">
                 <div class="svg-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1.5rem" height="1.3rem">
@@ -294,6 +302,7 @@
 </body>
 
 </html>
+
 
 
 
