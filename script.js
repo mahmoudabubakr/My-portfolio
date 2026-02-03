@@ -177,9 +177,9 @@ animate();
 function sendMail(e) {
   e.preventDefault();
 
-  const sendBtn = document.querySelector("#contact-form button"); // زرار الإرسال
-  sendBtn.disabled = true; // نوقفه أثناء الإرسال
-  sendBtn.textContent = "Sending... ⏳"; // تغيير النص للانتظار
+  const sendBtn = document.querySelector("#contact-form button");
+  sendBtn.disabled = true;
+  sendBtn.textContent = "Sending... ⏳";
 
   const subjectInput = document.getElementById("subject").value;
 
@@ -190,22 +190,24 @@ function sendMail(e) {
     message: document.getElementById("message").value,
   };
 
+  // استخدام catch للتأكد من التعامل مع أي خطأ
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(
       () => {
-        showAlert("Message sent successfully ✅", "success");
+        showAlert("Message sent successfully 🚀", "success");
         document.getElementById("contact-form").reset();
-        sendBtn.disabled = false; // يرجع يشتغل
-        sendBtn.textContent = "Send Message"; // يرجع النص الأصلي
-      },
-      (error) => {
-        console.log(error);
-        showAlert("Something went wrong ❌", "error");
-        sendBtn.disabled = false; // يرجع يشتغل حتى لو حصل خطأ
-        sendBtn.textContent = "Send Message"; // يرجع النص الأصلي
       }
-    );
+    )
+    .catch((error) => {
+      console.log(error);
+      showAlert("Something went wrong ❌", "error");
+    })
+    .finally(() => {
+      // في كل الحالات (نجاح أو فشل) نرجع الزرار طبيعي
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send Message";
+    });
 }
 
 
