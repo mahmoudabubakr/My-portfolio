@@ -121,7 +121,7 @@ a:hover {
 
 .social_nav {
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 #checkbox,
@@ -513,7 +513,7 @@ header p {
   align-items: center;
   flex-wrap: wrap;
   gap: 50px;
-  margin: 50px 10px;
+  margin: 30px 10px;
 }
 
 .skill h3 {
@@ -670,7 +670,7 @@ header p {
 #projects h2 {
   font-size: 2rem;
   font-family: Arial, sans-serif;
-  margin: 0px 0px 50px 30px;
+  margin: 0px 0px 30px 30px;
 }
 
 .title {
@@ -786,7 +786,7 @@ header p {
 .contact-me h2 {
   font-size: 2.3rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .contact-me span {
@@ -989,6 +989,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
