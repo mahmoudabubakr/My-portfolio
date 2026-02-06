@@ -188,23 +188,20 @@ function sendMail(e) {
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
-  const subjectInput = document.getElementById("subject").value;
-
   let params = {
     name: name,
     email: email,
-    subject: subjectInput || "No Subject",
     message: message,
   };
 
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      alert("Thank you for your enquiry, I will get back to you shortly"); // Alert افتراضي
+      alert("Thank you for your enquiry, I will get back to you shortly");
     })
     .catch((error) => {
       console.log(error);
-      alert("Something went wrong ❌"); // Alert افتراضي
+      alert("Something went wrong ❌");
     })
     .finally(() => {
       document.getElementById("contact-form").reset();
@@ -212,5 +209,4 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
-
 
