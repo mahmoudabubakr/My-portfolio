@@ -2,24 +2,41 @@
 <html lang="en">
 
 <head>
+  <!-- Meta Tags الأساسية -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Mahmoud Abubakr, Front-End & React Developer specializing in fast, responsive, and user-friendly web experiences.">
+  <meta name="author" content="Mahmoud Abubakr">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mahmoud Abubakr | Front-End Developer Portfolio">
+  <meta property="og:description" content="Front-End Developer specializing in modern, responsive, and high-performance web experiences.">
+  <meta property="og:image" content="https://mahmoudabubakr.github.io/My-portfolio/preview.png">
+  <meta property="og:url" content="https://mahmoudabubakr.github.io/My-portfolio/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mahmoud Abubakr | Front-End Developer Portfolio">
+  <meta name="twitter:description" content="Front-End Developer specializing in modern, responsive, and high-performance web experiences.">
+  <meta name="twitter:image" content="https://mahmoudabubakr.github.io/My-portfolio/preview.png">
+
+  <!-- Title -->
+  <title>Mahmoud Abubakr | Front-End Developer Portfolio</title>
+
+  <!-- Favicon و Apple Icon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-  <title>Mahmoud Abubakr portfolio</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init({
-        publicKey: "vrgUEapjJFZwDATsM",
-      });
-    })();
-  </script>
 </head>
+
 
 <body>
   <!-- start nav par -->
@@ -42,7 +59,7 @@
         <li><a href="#projects">PROJECTS</a></li>
         <li><a href="#contact">CONTACT ME</a></li>
       </ul>
-      <div class="menu-overlay"></div>
+      <div class="menu-overlay" aria-hidden="true"></div>
       <div class="hamburger">
         <div class="lines-container">
           <div class="line line-1"></div>
@@ -76,12 +93,13 @@
           </div>
         </a>
         <div class="social_nav">
-          <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i
-              class="fa-brands fa-github"></i></a>
-          <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
-            target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="http://linkedin.com/in/mahmoud-ali-abubakr1" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank" aria-label="GitHub profile"><i
+                  class="fa-brands fa-github"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
+                  target="_blank" aria-label="WhatsApp profile"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="http://linkedin.com/in/mahmoudaliabubakr" target="_blank" aria-label="LinkedIn profile"><i
+                    class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank" aria-label="Email me"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
     </div>
@@ -198,7 +216,7 @@
       <div class="projects-section">
         <div class="project-card">
           <div class="image-container">
-            <img src="IMG/Screenshot 2024-11-07 162441.WebP" alt="E-commerce Burger Restaurant" loading="lazy">
+            <img src="IMG/Screenshot 2024-11-07 162441.WebP" alt="E-commerce Burger Restaurant website project" loading="lazy">
           </div>
           <div class="project-title">
             <div>
@@ -214,7 +232,7 @@
         </div>
         <div class="project-card">
           <div class="image-container">
-            <img src="IMG/Screenshot 2026-02-03 061227.WebP" alt="Portfolio" loading="lazy">
+            <img src="IMG/Screenshot 2026-02-03 061227.WebP" alt="Portfolio website project" loading="lazy">
           </div>
           <div class="project-title">
             <div>
@@ -266,13 +284,13 @@
             </button>
             <!--  -->
             <div class="social-icons">
-              <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank"><i
-                  class="fa-brands fa-github"></i>
+              <a href="https://github.com/mahmoudabubakr?tab=repositories" target="_blank" aria-label="GitHub profile"><i
+                  class="fa-brands fa-github"></i></a>
                 <a href="https://api.whatsapp.com/send/?phone=201000350520&text&type=phone_number&app_absent=0"
-                  target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="http://linkedin.com/in/mahmoud-ali-abubakr1r" target="_blank"><i
+                  target="_blank" aria-label="WhatsApp profile"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="http://linkedin.com/in/mahmoudaliabubakr" target="_blank" aria-label="LinkedIn profile"><i
                     class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:mahmoudaliabubakr@gmail.com" target="_blank" aria-label="Email me"><i class="fa-solid fa-envelope"></i></a>
             </div>
           </div>
         </form>
@@ -298,11 +316,17 @@
   <canvas id="spiderweb"></canvas>
   <!-- end canves background -->
 
-  <!--  JS  -->
-  <script src="script.js"></script>
+  <!-- Scripts -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init("vrgUEapjJFZwDATsM");
+</script>
+<script src="script.js"></script> <!-- لو عندك كود JS كله هنا -->
+
 </body>
 
 </html>
+
 
 
 
