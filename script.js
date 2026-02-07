@@ -175,11 +175,12 @@ function sendMail(e) {
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // إعادة تعيين الأخطاء
+  // divs الأخطاء
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const messageError = document.getElementById("message-error");
 
+  // إعادة تعيين الأخطاء
   nameError.style.display = "none";
   emailError.style.display = "none";
   messageError.style.display = "none";
@@ -206,7 +207,7 @@ function sendMail(e) {
 
   if (hasError) return; // لو فيه خطأ نوقف هنا
 
-  // تعطيل الزر أثناء الإرسال
+  // لو كل الحقول تمام
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
@@ -214,17 +215,25 @@ function sendMail(e) {
 
   emailjs.send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      alert("Thank you for your enquiry, I will get back to you shortly ");
+      // نجاح الإرسال
+      const successDiv = document.createElement("div");
+      successDiv.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
+      successDiv.style.color = "green";
+      successDiv.setAttribute("role", "alert");
+      document.getElementById("contact-form").appendChild(successDiv);
+
       document.getElementById("contact-form").reset();
     })
     .catch((error) => {
       console.log(error);
-      alert("Something went wrong, Please try again.");
+      const errorDiv = document.createElement("div");
+      errorDiv.textContent = "Something went wrong ❌ Please try again.";
+      errorDiv.style.color = "red";
+      errorDiv.setAttribute("role", "alert");
+      document.getElementById("contact-form").appendChild(errorDiv);
     })
     .finally(() => {
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
 }
-
-
