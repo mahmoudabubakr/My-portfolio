@@ -165,25 +165,25 @@ window.addEventListener("load", () => {
 
 //
 function sendMail(e) {
-  e.preventDefault();
+  e.preventDefault(); // منع إعادة تحميل الصفحة
 
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
 
+  // القيم
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
+  // العناصر الخاصة بالأخطاء
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const messageError = document.getElementById("message-error");
-  const formAlert = document.getElementById("form-alert");
 
   // إعادة تعيين الرسائل
   nameError.style.display = "none";
   emailError.style.display = "none";
   messageError.style.display = "none";
-  formAlert.style.display = "none";
 
   let hasError = false;
 
@@ -205,25 +205,24 @@ function sendMail(e) {
     hasError = true;
   }
 
-  if (hasError) return;
+  if (hasError) return; // لو فيه خطأ ما نكملش
 
+  // تعطيل الزر أثناء الإرسال
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
   const params = { name, email, message };
 
+  // إرسال الإيميل عبر EmailJS
   emailjs.send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      formAlert.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
-      formAlert.style.color = "green";
-      formAlert.style.display = "block";
+      // رسالة نجاح عامة
+      alert("Thank you for your enquiry, I will get back to you shortly");
       document.getElementById("contact-form").reset();
     })
     .catch((error) => {
       console.log(error);
-      formAlert.textContent = "Something went wrong ❌ Please try again.";
-      formAlert.style.color = "red";
-      formAlert.style.display = "block";
+      alert("Something went wrong, Please try again.");
     })
     .finally(() => {
       sendBtn.disabled = false;
