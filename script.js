@@ -155,13 +155,6 @@ function initCanvas() {
   animate();
 }
 
-/* تشغيل الـ canvas بعد تحميل الصفحة */
-window.addEventListener("load", () => {
-  if (window.innerWidth > 768) {
-    initCanvas();
-  }
-});
-
 
 //
 function sendMail(e) {
@@ -202,3 +195,4 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
