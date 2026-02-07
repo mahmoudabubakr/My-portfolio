@@ -77,95 +77,90 @@ const typeEffect = () => {
 typeEffect();
 
 ////////////////////////
-const canvas = document.getElementById("spiderweb");
-const ctx = canvas.getContext("2d");
+function initCanvas() {
+  const canvas = document.getElementById("spiderweb");
+  const ctx = canvas.getContext("2d");
 
-// ضبط حجم الكانفاس
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-// مصفوفة لتخزين النقاط
-let points = [];
+  let points = [];
 
-// إنشاء نقاط عشوائية تتحرك
-function createRandomPoints(count) {
-  for (let i = 0; i < count; i++) {
-    points.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 2, // سرعة أفقية
-      vy: (Math.random() - 0.5) * 2, // سرعة عمودية
-    });
+  function createRandomPoints(count) {
+    for (let i = 0; i < count; i++) {
+      points.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+      });
+    }
   }
-}
 
-// رسم الشبكة
-function drawWeb() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // تنظيف الكانفاس
+  function getDistance(p1, p2) {
+    const dx = p1.x - p2.x;
+    const dy = p1.y - p2.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
 
-  // رسم الخطوط بين النقاط
-  for (let i = 0; i < points.length; i++) {
-    for (let j = i + 1; j < points.length; j++) {
-      const distance = getDistance(points[i], points[j]);
+  function drawWeb() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (distance < 150) { // شرط إذا كانت المسافة أقل من 150
-        ctx.beginPath();
-        ctx.moveTo(points[i].x, points[i].y);
-        ctx.lineTo(points[j].x, points[j].y);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 150})`; // شفافية الخطوط
-        ctx.lineWidth = 1;
-        ctx.stroke();
+    for (let i = 0; i < points.length; i++) {
+      for (let j = i + 1; j < points.length; j++) {
+        const distance = getDistance(points[i], points[j]);
+        if (distance < 150) {
+          ctx.beginPath();
+          ctx.moveTo(points[i].x, points[i].y);
+          ctx.lineTo(points[j].x, points[j].y);
+          ctx.strokeStyle = `rgba(255,255,255,${1 - distance / 150})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
       }
     }
   }
-}
 
-// تحديث موقع النقاط المتحركة
-function updatePoints() {
-  for (let point of points) {
-    point.x += point.vx;
-    point.y += point.vy;
+  function updatePoints() {
+    for (let p of points) {
+      p.x += p.vx;
+      p.y += p.vy;
 
-    // عكس الاتجاه إذا خرجت النقطة خارج الحدود
-    if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
-    if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    }
   }
-}
 
-// حدث لإضافة نقطة عند النقر على الشاشة
-canvas.addEventListener("click", (e) => {
-  points.push({
-    x: e.clientX,
-    y: e.clientY,
-    vx: (Math.random() - 0.5) * 2, // سرعة أفقية
-    vy: (Math.random() - 0.5) * 2, // سرعة عمودية
+  function animate() {
+    drawWeb();
+    updatePoints();
+    requestAnimationFrame(animate);
+  }
+
+  canvas.addEventListener("click", (e) => {
+    points.push({
+      x: e.clientX,
+      y: e.clientY,
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
+    });
   });
-});
 
-// حساب المسافة بين نقطتين
-function getDistance(point1, point2) {
-  const dx = point1.x - point2.x;
-  const dy = point1.y - point2.y;
-  return Math.sqrt(dx * dx + dy * dy);
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  createRandomPoints(30);
+  animate();
 }
 
-// حلقة الرسوم المتحركة
-function animate() {
-  drawWeb();
-  updatePoints();
-  requestAnimationFrame(animate);
-}
-
-// ضبط حجم الكانفاس عند تغيير حجم النافذة
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  drawWeb();
+/* تشغيل الـ canvas بعد تحميل الصفحة */
+window.addEventListener("load", () => {
+  if (window.innerWidth > 768) {
+    initCanvas();
+  }
 });
-
-// بدء الشبكة العائمة
-createRandomPoints(30); // إنشاء 20 نقطة عشوائية
-animate();
 
 
 //
@@ -209,4 +204,5 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
 
