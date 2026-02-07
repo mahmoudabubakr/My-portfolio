@@ -513,7 +513,7 @@ header p {
   align-items: center;
   flex-wrap: wrap;
   gap: 50px;
-  margin: 30px 10px;
+  margin: 50px 10px;
 }
 
 .skill h3 {
@@ -989,6 +989,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
