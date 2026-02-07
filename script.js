@@ -170,33 +170,68 @@ function sendMail(e) {
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
 
-  // التحقق من الخانات المطلوبة
+  // جلب القيم
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !message) {
-    alert("Please fill all required fields ✋"); // Alert افتراضي
-    return;
+  // جلب عناصر الرسائل
+  const nameError = document.getElementById("name-error");
+  const emailError = document.getElementById("email-error");
+  const messageError = document.getElementById("message-error");
+  const formSuccess = document.getElementById("form-success");
+
+  // إعادة تعيين الرسائل
+  nameError.style.display = "none";
+  emailError.style.display = "none";
+  messageError.style.display = "none";
+  formSuccess.style.display = "none";
+
+  let isValid = true;
+
+  // التحقق من الاسم
+  if (!name) {
+    nameError.textContent = "Please enter your name!";
+    nameError.style.display = "block";
+    isValid = false;
   }
 
+  // التحقق من الايميل
+  if (!email) {
+    emailError.textContent = "Please enter your email!";
+    emailError.style.display = "block";
+    isValid = false;
+  } else if (!/\S+@\S+\.\S+/.test(email)) {
+    emailError.textContent = "Please enter a valid email!";
+    emailError.style.display = "block";
+    isValid = false;
+  }
+
+  // التحقق من الرسالة
+  if (!message) {
+    messageError.textContent = "Please enter your message!";
+    messageError.style.display = "block";
+    isValid = false;
+  }
+
+  if (!isValid) return;
+
+  // إذا كل شيء تمام
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
-  let params = {
-    name: name,
-    email: email,
-    message: message,
-  };
+  let params = { name, email, message };
 
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      alert("Thank you for your enquiry, I will get back to you shortly");
+      formSuccess.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
+      formSuccess.style.display = "block";
     })
     .catch((error) => {
       console.log(error);
-      alert("Something went wrong ❌");
+      formSuccess.textContent = "Something went wrong ❌ Please try again.";
+      formSuccess.style.display = "block";
     })
     .finally(() => {
       document.getElementById("contact-form").reset();
@@ -204,5 +239,8 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
+// ربط الفورم بالارسال
+document.getElementById("contact-form").addEventListener("submit", sendMail);
 
 
