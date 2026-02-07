@@ -77,6 +77,46 @@ const typeEffect = () => {
 typeEffect();
 
 ////////////////////////
+const textElement = document.getElementById("animated-text");
+const texts = ["Front-End Developer.", "Back-End Developer."];
+let currentTextIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+
+const typeEffect = () => {
+  const currentText = texts[currentTextIndex];
+
+  if (!isDeleting) {
+    // كتابة النص حرفًا حرفًا
+    textElement.textContent = currentText.slice(0, currentCharIndex + 1);
+    currentCharIndex++;
+
+    // عند الانتهاء من كتابة النص بالكامل
+    if (currentCharIndex === currentText.length) {
+      isDeleting = true; // بدء الحذف
+      setTimeout(typeEffect, 1000); // انتظار قبل بدء الحذف
+      return;
+    }
+  } else {
+    // حذف النص حرفًا حرفًا
+    textElement.textContent = currentText.slice(0, currentCharIndex - 1);
+    currentCharIndex--;
+
+    // عند الانتهاء من حذف النص بالكامل
+    if (currentCharIndex === 0) {
+      isDeleting = false; // بدء كتابة النص التالي
+      currentTextIndex = (currentTextIndex + 1) % texts.length; // الانتقال إلى النص التالي
+    }
+  }
+
+  // تحديد سرعة الكتابة والحذف
+  setTimeout(typeEffect, isDeleting ? 100 : 150);
+};
+
+// بدء تأثير الكتابة
+typeEffect();
+
+////////////////////////
 const canvas = document.getElementById("spiderweb");
 const ctx = canvas.getContext("2d");
 
@@ -206,5 +246,6 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
 
 
