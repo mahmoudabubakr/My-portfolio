@@ -170,69 +170,36 @@ function sendMail(e) {
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
 
-  // الحقول
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // divs الأخطاء
-  const nameError = document.getElementById("name-error");
-  const emailError = document.getElementById("email-error");
-  const messageError = document.getElementById("message-error");
-
-  // إعادة تعيين الأخطاء
-  nameError.style.display = "none";
-  emailError.style.display = "none";
-  messageError.style.display = "none";
-
-  let hasError = false;
-
-  if (!name) {
-    nameError.textContent = "Please enter your name";
-    nameError.style.display = "block";
-    hasError = true;
+  // هنا مش هنستخدم alert، فقط الاعتماد على required و aria-required في HTML
+  if (!name || !email || !message) {
+    // يمكن ترك الحقول لتظهر للمتصفح وللقارئ الشاشة
+    return;
   }
 
-  if (!email) {
-    emailError.textContent = "Please enter your email";
-    emailError.style.display = "block";
-    hasError = true;
-  }
-
-  if (!message) {
-    messageError.textContent = "Please enter your message";
-    messageError.style.display = "block";
-    hasError = true;
-  }
-
-  if (hasError) return; // لو فيه خطأ نوقف هنا
-
-  // لو كل الحقول تمام
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
-  const params = { name, email, message };
+  let params = {
+    name: name,
+    email: email,
+    message: message,
+  };
 
-  emailjs.send("service_bivff26", "template_4qdgy3p", params)
+  emailjs
+    .send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      // نجاح الإرسال
-      const successDiv = document.createElement("div");
-      successDiv.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
-      successDiv.style.color = "green";
-      successDiv.setAttribute("role", "alert");
-      document.getElementById("contact-form").appendChild(successDiv);
-
-      document.getElementById("contact-form").reset();
+      alert("Thank you for your enquiry, I will get back to you shortly"); // نجاح
     })
     .catch((error) => {
       console.log(error);
-      const errorDiv = document.createElement("div");
-      errorDiv.textContent = "Something went wrong ❌ Please try again.";
-      errorDiv.style.color = "red";
-      errorDiv.setAttribute("role", "alert");
-      document.getElementById("contact-form").appendChild(errorDiv);
+      alert("Something went wrong, please try again"); // فشل
     })
     .finally(() => {
+      document.getElementById("contact-form").reset();
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
