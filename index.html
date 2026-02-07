@@ -238,10 +238,10 @@
           just want to say hi, I’ll definitely get back to you!</p>
         <form id="contact-form" class="contact-form" onsubmit="sendMail(event)">
           <div class="form">
-            <input type="text" id="name" name="name" placeholder="Name" required />
+            <input type="text" id="name" name="name" placeholder="Name" autocomplete="given-name" required />
             </div>
             <div class="form">
-            <input type="email" id="email" name="email" placeholder="Email" required />
+            <input type="email" id="email" name="email" placeholder="Email" autocomplete="off" required />
           </div>
           <!-- <div class="form">
             <input type="text" id="subject" name="subject" placeholder="Subject" />
@@ -303,6 +303,7 @@
 </body>
 
 </html>
+
 
 
 
