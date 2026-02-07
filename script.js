@@ -175,35 +175,16 @@ function sendMail(e) {
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // العناصر الخاصة بالأخطاء
-  const nameError = document.getElementById("name-error");
-  const emailError = document.getElementById("email-error");
-  const messageError = document.getElementById("message-error");
-
-  // إعادة تعيين الرسائل
-  nameError.style.display = "none";
-  emailError.style.display = "none";
-  messageError.style.display = "none";
+  // إعادة تعيين الرسائل (HTML يتحكم بها)
+  document.getElementById("name-error").style.display = "none";
+  document.getElementById("email-error").style.display = "none";
+  document.getElementById("message-error").style.display = "none";
 
   let hasError = false;
 
-  if (!name) {
-    nameError.textContent = "Please enter your name ✋";
-    nameError.style.display = "block";
-    hasError = true;
-  }
-
-  if (!email) {
-    emailError.textContent = "Please enter your email ✋";
-    emailError.style.display = "block";
-    hasError = true;
-  }
-
-  if (!message) {
-    messageError.textContent = "Please enter your message ✋";
-    messageError.style.display = "block";
-    hasError = true;
-  }
+  if (!name) hasError = true;
+  if (!email) hasError = true;
+  if (!message) hasError = true;
 
   if (hasError) return; // لو فيه خطأ ما نكملش
 
@@ -213,19 +194,19 @@ function sendMail(e) {
 
   const params = { name, email, message };
 
-  // إرسال الإيميل عبر EmailJS
   emailjs.send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
       // رسالة نجاح عامة
-      alert("Thank you for your enquiry, I will get back to you shortly");
+      alert("Thank you for your enquiry, I will get back to you shortly ✅");
       document.getElementById("contact-form").reset();
     })
     .catch((error) => {
       console.log(error);
-      alert("Something went wrong, Please try again.");
+      alert("Something went wrong ❌ Please try again.");
     })
     .finally(() => {
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
 }
+
