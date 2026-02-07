@@ -170,77 +170,63 @@ function sendMail(e) {
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
 
-  // جلب القيم
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // جلب عناصر الرسائل
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const messageError = document.getElementById("message-error");
-  const formSuccess = document.getElementById("form-success");
+  const formAlert = document.getElementById("form-alert");
 
   // إعادة تعيين الرسائل
   nameError.style.display = "none";
   emailError.style.display = "none";
   messageError.style.display = "none";
-  formSuccess.style.display = "none";
+  formAlert.style.display = "none";
 
-  let isValid = true;
+  let hasError = false;
 
-  // التحقق من الاسم
   if (!name) {
-    nameError.textContent = "Please enter your name!";
+    nameError.textContent = "Please enter your name ✋";
     nameError.style.display = "block";
-    isValid = false;
+    hasError = true;
   }
 
-  // التحقق من الايميل
   if (!email) {
-    emailError.textContent = "Please enter your email!";
+    emailError.textContent = "Please enter your email ✋";
     emailError.style.display = "block";
-    isValid = false;
-  } else if (!/\S+@\S+\.\S+/.test(email)) {
-    emailError.textContent = "Please enter a valid email!";
-    emailError.style.display = "block";
-    isValid = false;
+    hasError = true;
   }
 
-  // التحقق من الرسالة
   if (!message) {
-    messageError.textContent = "Please enter your message!";
+    messageError.textContent = "Please enter your message ✋";
     messageError.style.display = "block";
-    isValid = false;
+    hasError = true;
   }
 
-  if (!isValid) return;
+  if (hasError) return;
 
-  // إذا كل شيء تمام
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
-  let params = { name, email, message };
+  const params = { name, email, message };
 
-  emailjs
-    .send("service_bivff26", "template_4qdgy3p", params)
+  emailjs.send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      formSuccess.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
-      formSuccess.style.display = "block";
+      formAlert.textContent = "Thank you for your enquiry, I will get back to you shortly ✅";
+      formAlert.style.color = "green";
+      formAlert.style.display = "block";
+      document.getElementById("contact-form").reset();
     })
     .catch((error) => {
       console.log(error);
-      formSuccess.textContent = "Something went wrong ❌ Please try again.";
-      formSuccess.style.display = "block";
+      formAlert.textContent = "Something went wrong ❌ Please try again.";
+      formAlert.style.color = "red";
+      formAlert.style.display = "block";
     })
     .finally(() => {
-      document.getElementById("contact-form").reset();
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
 }
-
-// ربط الفورم بالارسال
-document.getElementById("contact-form").addEventListener("submit", sendMail);
-
-
