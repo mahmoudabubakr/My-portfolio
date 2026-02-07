@@ -165,41 +165,39 @@ window.addEventListener("load", () => {
 
 //
 function sendMail(e) {
-  e.preventDefault();
+  e.preventDefault(); // منع الإرسال الافتراضي مؤقتًا للتحقق
+
+  const form = document.getElementById("contact-form");
+
+  // تحقق من صحة الفورم (required + type) وعرض رسالة المتصفح إذا غير مكتمل
+  if (!form.checkValidity()) {
+    form.reportValidity(); // يظهر رسالة المتصفح لكل الحقول required
+    return;
+  }
 
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
+
+  sendBtn.disabled = true;
+  btnText.textContent = "Sending...";
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // هنا مش هنستخدم alert، فقط الاعتماد على required و aria-required في HTML
-  if (!name || !email || !message) {
-    // يمكن ترك الحقول لتظهر للمتصفح وللقارئ الشاشة
-    return;
-  }
-
-  sendBtn.disabled = true;
-  btnText.textContent = "Sending...";
-
-  let params = {
-    name: name,
-    email: email,
-    message: message,
-  };
+  const params = { name, email, message };
 
   emailjs
     .send("service_bivff26", "template_4qdgy3p", params)
     .then(() => {
-      alert("Thank you for your enquiry, I will get back to you shortly"); // نجاح
+      alert("Thank you for your enquiry, I will get back to you shortly ");
     })
     .catch((error) => {
-      console.log(error);
-      alert("Something went wrong, please try again"); // فشل
+      console.error(error);
+      alert("Something went wrong ");
     })
     .finally(() => {
-      document.getElementById("contact-form").reset();
+      form.reset();
       sendBtn.disabled = false;
       btnText.textContent = "Send";
     });
