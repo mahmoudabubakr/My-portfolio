@@ -167,7 +167,7 @@ window.addEventListener("resize", () => {
 createRandomPoints(30); // إنشاء 20 نقطة عشوائية
 animate();
 
-/////////
+// contact form
 
 function sendMail(e) {
   e.preventDefault(); // منع الإرسال الافتراضي مؤقتًا للتحقق
@@ -207,3 +207,22 @@ function sendMail(e) {
       btnText.textContent = "Send";
     });
 }
+
+// CURSOR 
+const cursor = document.querySelector('.cursor');
+
+// متابعة حركة الماوس
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+});
+
+// إضافة class عند الضغط
+document.addEventListener('mousedown', () => {
+  cursor.classList.add('click');
+});
+
+// إزالة class عند رفع الماوس
+document.addEventListener('mouseup', () => {
+  cursor.classList.remove('click');
+});
