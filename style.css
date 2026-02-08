@@ -3,6 +3,7 @@
   padding: 0%;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+    cursor: none;
 }
 
 html {
@@ -12,11 +13,20 @@ html {
 body {
   background-color: #0a192f;
 }
-
-@media (max-width: 900px) {
-  body {
-    margin: 0px;
-  }
+.cursor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none; 
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.5s ease;
+  z-index: 9999;
+}
+.cursor.click {
+  transform: translate(-50%, -50%) scale(0.5); /* تصغير الدائرة */
 }
 
 /* الكانفاس كخلفية */
@@ -72,7 +82,7 @@ ul a {
   font-size: 15px;
   margin: 0px 20px;
   transition: color 0.3s;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: bold;
 }
 
@@ -110,7 +120,7 @@ a:hover {
   font-size: 25px;
   color: #ffffff;
   transition: transform 0.3s ease;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .social_nav i:hover {
@@ -200,7 +210,7 @@ a:hover {
     position: relative;
     width: 30px;
     height: 15px;
-    cursor: pointer;
+    /* cursor: pointer; */
   }
 
   .line {
@@ -301,7 +311,7 @@ header p {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   transition-duration: .3s;
   transition: all 0.3s ease;
@@ -587,7 +597,7 @@ header p {
   position: relative;
   width: 25%;
   border-radius: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .card:hover {
@@ -691,7 +701,7 @@ header p {
   box-shadow: 0 4px 5px #45dac0;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .project-card:hover {
@@ -871,7 +881,7 @@ button {
   border-radius: 5px;
   overflow: hidden;
   transition: all 0.2s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 button:hover {
@@ -989,6 +999,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
