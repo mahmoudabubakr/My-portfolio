@@ -28,6 +28,16 @@ body {
 .cursor.click {
   transform: translate(-50%, -50%) scale(0.5); /* تصغير الدائرة */
 }
+/* 📱 موبايل & تاتش */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+}
 
 /* الكانفاس كخلفية */
 #spiderweb {
@@ -1040,6 +1050,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
