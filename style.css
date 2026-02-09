@@ -299,6 +299,7 @@ a:hover {
 .rotated .line-3 {
   transform: rotate(-45deg) translate(5px, -8px);
 }
+}
 
 @media (max-width: 600px) {
   .navigation {
@@ -1058,6 +1059,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
