@@ -226,3 +226,14 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('mouseup', () => {
   cursor.classList.remove('click');
 });
+
+const cursor = document.querySelector('.cursor'); // لو عندك div للكيرسر
+
+// Detect first touch
+document.addEventListener('touchstart', () => {
+  if (cursor) {
+    cursor.style.display = 'none'; // يخفي الكيرسر فورًا
+  }
+}, { once: true }); // once → عشان يحصل مرة واحدة فقط
+
+
