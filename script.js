@@ -227,7 +227,6 @@ document.addEventListener('mouseup', () => {
   cursor.classList.remove('click');
 });
 
-const cursor = document.querySelector('.cursor'); // لو عندك div للكيرسر
 
 
 
