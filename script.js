@@ -226,18 +226,3 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('mouseup', () => {
   cursor.classList.remove('click');
 });
-// ////////////////////
-/* 📱 موبايل & تاتش */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    cursor: auto !important;
-  }
-
-  .cursor {
-    display: none !important;
-  }
-}
-
-
-
-
