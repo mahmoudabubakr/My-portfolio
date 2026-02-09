@@ -203,7 +203,50 @@ a:hover {
     align-items: center;
     gap: 30px;
   }
-   .lines-container {
+
+     
+ .lines-container {
+  position: relative;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: #45dac0;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+    z-index: 10;
+}
+
+.line-1 {
+  top: 0;
+}
+
+.line-2 {
+  top: 9px;
+}
+
+.line-3 {
+  bottom: 0;
+}
+
+.rotated .line-1 {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+
+.rotated .line-2 {
+  opacity: 0;
+  transform: scaleX(0); 
+}
+
+.rotated .line-3 {
+  transform: rotate(-45deg) translate(5px, -8px);
+}
+   /* .lines-container {
   position: relative;
   width: 30px;
   height: 22px;
@@ -252,7 +295,9 @@ a:hover {
 
 .rotated .line-3 {
   transform: rotate(-45deg);
-}
+} */
+
+  
   /* .lines-container {
     position: relative;
     width: 30px;
@@ -1040,6 +1085,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
