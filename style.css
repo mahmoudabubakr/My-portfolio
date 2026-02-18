@@ -31,9 +31,9 @@ body {
   z-index: 9999;
 }
 .cursor.click {
-  transform: translate(-50%, -50%) scale(0.5); /* تصغير الدائرة */
+  transform: translate(-50%, -50%) scale(0.5);
 }
-
+}
 /* الكانفاس كخلفية */
 #spiderweb {
   position: fixed;
@@ -1062,6 +1062,7 @@ footer {
   border-top: 1px #45dac13a solid;
   text-align: center;
 }
+
 
 
 
